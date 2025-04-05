@@ -20,7 +20,15 @@ public class EntityHealth : MonoBehaviour
         health -= newDamage;
 
         if (health <= 0) {
-
+            if(transform.position.y > 29) {
+                GameManager.particles_BloodAboveWater.transform.position = transform.position;
+                GameManager.particles_BloodAboveWater.Play();
+            } else {
+                GameManager.particles_Blood.transform.position = transform.position;
+                GameManager.particles_Blood.Play();
+            }
+            transform.parent.GetComponent<TriggerSequence>().IncrementSequence();
+            Destroy(gameObject);
         }
     }
 }

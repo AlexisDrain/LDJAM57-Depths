@@ -1,9 +1,10 @@
+using UnityEditor.DeviceSimulation;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TriggerPlayerTouch : MonoBehaviour
 {
-    public UnityEvent onTouch;
+    public UnityEvent onTouchEvent;
     void Start()
     {
         
@@ -13,12 +14,12 @@ public class TriggerPlayerTouch : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         if(col.collider.CompareTag("Player")) {
-            onTouch.Invoke();
+            onTouchEvent.Invoke();
         }
     }
     void OnTriggerEnter(Collider col) {
         if (col.CompareTag("Player")) {
-            onTouch.Invoke();
+            onTouchEvent.Invoke();
         }
     }
 }

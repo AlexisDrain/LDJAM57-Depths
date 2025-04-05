@@ -26,10 +26,18 @@ public class PlayerControllerShark : MonoBehaviour {
     void FixedUpdate()
     {
         if(transform.position.y > waterHeight) {
-            _aboveWater = true;
+            if(_aboveWater == false) {
+                _aboveWater = true;
+                GameManager.particles_Water.transform.position = transform.position;
+                GameManager.particles_Water.Play();
+            }
             myRigidbody.AddForce(Vector3.down * gravityForce, ForceMode.Force);
         } else {
-            _aboveWater = false;
+            if (_aboveWater == true) {
+                _aboveWater = false;
+                GameManager.particles_Water.transform.position = transform.position;
+                GameManager.particles_Water.Play();
+            }
         }
 
         float h = Input.GetAxisRaw("Horizontal");
