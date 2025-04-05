@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraGridFollow : MonoBehaviour
 {
     public Vector2 cameraCoords = new Vector2(0, 0);
     public Vector2 cameraBounds = new Vector2(32, 18);

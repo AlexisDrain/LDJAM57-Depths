@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerSpear : MonoBehaviour {
-
-    public float charge = 0f;
+public class PlayerControllerPlatformer : MonoBehaviour {
 
     public float horizontalMoveForce = 10f;
     public float maxHorizontalSpeed = 10f;
@@ -12,20 +10,22 @@ public class PlayerSpear : MonoBehaviour {
     public float gravityForce = 10f;
     private Rigidbody myRigidbody;
     private SpriteRenderer myRenderer;
-
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
         myRenderer = transform.Find("Graphics").GetComponent<SpriteRenderer>();
     }
 
-
+    void Update() {
+        if(Input.GetButtonDown("Jump")) {
+            myRigidbody.AddForce(Vector3.up * verticalMoveImpulse, ForceMode.Impulse);
+        }
+    }
     void FixedUpdate()
     {
         myRigidbody.AddForce(Vector3.down * gravityForce, ForceMode.Force);
 
         float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
 
         if (h < -0.1f) {
             myRenderer.flipX = true;
