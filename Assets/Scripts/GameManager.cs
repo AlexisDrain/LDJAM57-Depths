@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public static Image bottomBarFill;
     public static Animator waveTextAnim;
 
+    private static Pool pool_LoudAudioSource;
+
     public static ParticleSystem particles_Blood;
     public static ParticleSystem particles_BloodAboveWater;
     public static ParticleSystem particles_Water;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
 
         bottomBarFill = GameObject.Find("BottomBarFill").GetComponent<Image>();
         waveTextAnim = GameObject.Find("WaveText").GetComponent<Animator>();
+
+        pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
 
         particles_Blood = transform.Find("Particles_Blood").GetComponent<ParticleSystem>();
         particles_BloodAboveWater = transform.Find("Particles_BloodAboveWater").GetComponent<ParticleSystem>();
@@ -50,4 +54,20 @@ public class GameManager : MonoBehaviour
         
     }
     */
+
+    public static AudioSource SpawnLoudAudio(AudioClip newAudioClip, Vector2 pitch = new Vector2(), float newVolume = 1f) {
+
+        float sfxPitch;
+        if (pitch.x <= 0.1f) {
+            sfxPitch = 1;
+        } else {
+            sfxPitch = Random.Range(pitch.x, pitch.y);
+        }
+
+        AudioSource audioObject = pool_LoudAudioSource.Spawn(new Vector3(0f, 0f, 0f)).GetComponent<AudioSource>();
+        audioObject.GetComponent<AudioSource>().pitch = sfxPitch;
+        audioObject.PlayWebGL(newAudioClip, newVolume);
+        return audioObject;
+        // audio object will set itself to inactive after done playing.
+    }
 }
