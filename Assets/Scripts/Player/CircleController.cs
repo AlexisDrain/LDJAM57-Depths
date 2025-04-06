@@ -26,7 +26,8 @@ public class CircleController : MonoBehaviour
 
 
         if (Input.GetButtonDown("Dash")
-            && GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false) {
+            && GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false
+            && GameManager.playerIsAlive == true) {
 
             if (Cursor.visible == true) {
                 Cursor.visible = false;

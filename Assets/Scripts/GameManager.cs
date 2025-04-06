@@ -1,22 +1,29 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    public static bool playerIsAlive = true;
+    public bool cheatsActivated = false;
 
     public List<GameObject> waves = new List<GameObject>();
     public static int currentWave = 0;
 
     public static GameManager myGameManager;
     public static Transform playerTrans;
+    public static Transform playerSpawn;
 
+    public static GameObject upgrades;
     public static Image bottomBarFill;
     public static Animator waveTextAnim;
 
     private static Pool pool_LoudAudioSource;
-
+    public static Pool pool_EnemySpear;
+    
     public static ParticleSystem particles_Blood;
     public static ParticleSystem particles_BloodAboveWater;
     public static ParticleSystem particles_Water;
@@ -24,36 +31,60 @@ public class GameManager : MonoBehaviour
     {
         myGameManager = GetComponent<GameManager>();
         playerTrans = GameObject.Find("Player").transform;
+        playerSpawn = GameObject.Find("PlayerSpawn").transform;
 
+        upgrades = GameObject.Find("Canvas/Upgrades");
+        upgrades.SetActive(false);
         bottomBarFill = GameObject.Find("BottomBarFill").GetComponent<Image>();
         waveTextAnim = GameObject.Find("WaveText").GetComponent<Animator>();
 
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
+        pool_EnemySpear = transform.Find("Pool_EnemySpear").GetComponent<Pool>();
 
         particles_Blood = transform.Find("Particles_Blood").GetComponent<ParticleSystem>();
         particles_BloodAboveWater = transform.Find("Particles_BloodAboveWater").GetComponent<ParticleSystem>();
         particles_Water = transform.Find("Particles_Water").GetComponent<ParticleSystem>();
 
         SetNewWave(0);
+        StartWave();
     }
 
-
+    public void StartWave() {
+        Time.timeScale = 1f;
+        waves[currentWave].SetActive(true);
+    }
     public void SetNewWave(int newWaveIndex) {
         for (int i = 0; i < waves.Count; i++) {
             waves[i].SetActive(false);
         }
-        waves[newWaveIndex].SetActive(true);
+        currentWave = newWaveIndex;
         waveTextAnim.GetComponent<TextMeshProUGUI>().text = $"Wave {newWaveIndex+1} of 10";
         waveTextAnim.SetTrigger("ShowText");
         bottomBarFill.fillAmount = 0;
+        if(newWaveIndex != 0) {
+            upgrades.SetActive(true);
+        }
     }
-    /*
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (playerIsAlive == false) {
+            if(Input.GetButtonDown("Restart")) {
+                SetNewWave(0);
+                GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 3;
+                GameManager.playerTrans.position = GameManager.playerSpawn.position;
+                playerIsAlive = true;
+            }
+        }
+        if (cheatsActivated) {
+            if(Input.GetKey(KeyCode.LeftShift)) {
+                if(Input.GetKeyDown(KeyCode.Alpha1)) {
+                    SetNewWave(1);
+                }
+            }
+        }
     }
-    */
+
 
     public static AudioSource SpawnLoudAudio(AudioClip newAudioClip, Vector2 pitch = new Vector2(), float newVolume = 1f) {
 
