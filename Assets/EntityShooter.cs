@@ -9,6 +9,7 @@ public class EntityShooter : MonoBehaviour
     public float shootImpulse = 1f;
     public float defaultReloadDelay = 1f;
     private float currentReloadDelay = 1f;
+    public AudioClip powerUpSFX;
     public AudioClip shootSFX;
     void Start()
     {
@@ -35,6 +36,8 @@ public class EntityShooter : MonoBehaviour
 
     private IEnumerator ShootPattern1() {
         shootTimerSprite.GetComponent<Animator>().SetTrigger("ShootWarning");
+        GetComponent<AudioSource>().clip = powerUpSFX;
+        GetComponent<AudioSource>().PlayWebGL();
         yield return new WaitForSeconds(1f);
         ShootSpear();
         yield return new WaitForSeconds(0.2f);
@@ -44,7 +47,7 @@ public class EntityShooter : MonoBehaviour
     }
 
     private void ShootSpear() {
-        Vector3 direction = GameManager.playerTrans.position - bulletStart.position;
+        Vector3 direction = (GameManager.playerTrans.position - bulletStart.position).normalized;
 
         GameObject spear = GameManager.pool_EnemySpear.Spawn(bulletStart.position);
         spear.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
