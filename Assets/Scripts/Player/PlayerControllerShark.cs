@@ -32,6 +32,9 @@ public class PlayerControllerShark : MonoBehaviour {
             }
             if (transform.position.y > waterHeight) {
                 _aboveWater = true;
+                myRigidbody.linearVelocity = new Vector3(myRigidbody.linearVelocity.x * drag,
+                                                     myRigidbody.linearVelocity.y * drag,
+                                                     myRigidbody.linearVelocity.z);
             }
             return;
         }

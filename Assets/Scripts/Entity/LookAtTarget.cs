@@ -22,10 +22,12 @@ public class LookAtTarget : MonoBehaviour
         float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * 180 / Mathf.PI;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0f, 0f, angle)), lerpSpeed * Time.deltaTime);
 
-        if (target.position.x < transform.position.x) {
-            mySprite.flipY = true;
-        } else {
-            mySprite.flipY = false;
+        if(mySprite) {
+            if (target.position.x < transform.position.x) {
+                mySprite.flipY = true;
+            } else {
+                mySprite.flipY = false;
+            }
         }
         /*
         if (target.position.x < transform.position.x) {

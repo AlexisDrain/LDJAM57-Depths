@@ -17,11 +17,12 @@ public class LookAtVelocity : MonoBehaviour
         float angle = Mathf.Atan2(myRigidbody.linearVelocity.y, myRigidbody.linearVelocity.x) * 180 / Mathf.PI;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0f, 0f, angle)), lerpSpeed * Time.deltaTime);
 
-        if(myRigidbody.linearVelocity.x < -1f) {
-            mySprite.flipY = true;
-        } else {
-            mySprite.flipY = false;
+        if(mySprite) {
+            if(myRigidbody.linearVelocity.x < -1f) {
+                mySprite.flipY = true;
+            } else {
+                mySprite.flipY = false;
+            }
         }
-
     }
 }

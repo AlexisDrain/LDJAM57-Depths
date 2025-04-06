@@ -175,7 +175,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 120
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!114 &8970698100859527211
 MonoBehaviour:
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletStart: {fileID: 2154990257139554685}
   shootTimerSprite: {fileID: 4381968670925970452}
+  shootDistance: 15
   shootImpulse: 13
   defaultReloadDelay: 2
   powerUpSFX: {fileID: 8300000, guid: 763bc21b86667da47a5ac832b7bd5a85, type: 3}

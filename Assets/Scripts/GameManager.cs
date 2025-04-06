@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static bool playerIsAlive = true;
+    public static bool playerInUpgradeMenu = false;
     public bool cheatsActivated = false;
 
     public List<GameObject> waves = new List<GameObject>();
@@ -23,7 +24,9 @@ public class GameManager : MonoBehaviour
 
     private static Pool pool_LoudAudioSource;
     public static Pool pool_EnemySpear;
-    
+    public static Pool pool_EnemyMissile;
+    public static Pool pool_Explosion;
+
     public static ParticleSystem particles_Blood;
     public static ParticleSystem particles_BloodAboveWater;
     public static ParticleSystem particles_Water;
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         pool_EnemySpear = transform.Find("Pool_EnemySpear").GetComponent<Pool>();
+        pool_EnemyMissile = transform.Find("Pool_EnemyMissile").GetComponent<Pool>();
+        pool_Explosion = transform.Find("Pool_Explosion").GetComponent<Pool>();
 
         particles_Blood = transform.Find("Particles_Blood").GetComponent<ParticleSystem>();
         particles_BloodAboveWater = transform.Find("Particles_BloodAboveWater").GetComponent<ParticleSystem>();
@@ -52,6 +57,7 @@ public class GameManager : MonoBehaviour
     public void StartWave() {
         Time.timeScale = 1f;
         waves[currentWave].SetActive(true);
+        playerInUpgradeMenu = false;
     }
     public void SetNewWave(int newWaveIndex) {
         for (int i = 0; i < waves.Count; i++) {
@@ -63,6 +69,8 @@ public class GameManager : MonoBehaviour
         bottomBarFill.fillAmount = 0;
         if(newWaveIndex != 0) {
             upgrades.SetActive(true);
+            playerInUpgradeMenu = true;
+            Cursor.visible = true;
         }
     }
 
@@ -72,6 +80,7 @@ public class GameManager : MonoBehaviour
             if(Input.GetButtonDown("Restart")) {
                 SetNewWave(0);
                 GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 3;
+                GameManager.playerTrans.GetComponent<Rigidbody>().position = GameManager.playerSpawn.position;
                 GameManager.playerTrans.position = GameManager.playerSpawn.position;
                 playerIsAlive = true;
             }
@@ -80,6 +89,30 @@ public class GameManager : MonoBehaviour
             if(Input.GetKey(KeyCode.LeftShift)) {
                 if(Input.GetKeyDown(KeyCode.Alpha1)) {
                     SetNewWave(1);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                    SetNewWave(2);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3)) {
+                    SetNewWave(3);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha4)) {
+                    SetNewWave(4);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha5)) {
+                    SetNewWave(5);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha6)) {
+                    SetNewWave(6);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha7)) {
+                    SetNewWave(7);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha8)) {
+                    SetNewWave(8);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha9)) {
+                    SetNewWave(9);
                 }
             }
         }

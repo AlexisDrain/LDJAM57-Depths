@@ -5,6 +5,7 @@ public class CircleController : MonoBehaviour
 {
     public float dashImpulse = 10f;
 
+    public AudioClip clip_dash;
     private Rigidbody playerRigidbody;
     void Start()
     {
@@ -27,12 +28,14 @@ public class CircleController : MonoBehaviour
 
         if (Input.GetButtonDown("Dash")
             && GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false
-            && GameManager.playerIsAlive == true) {
+            && GameManager.playerIsAlive == true
+            && GameManager.playerInUpgradeMenu == false) {
 
             if (Cursor.visible == true) {
                 Cursor.visible = false;
             }
             // GameManager.playerTrans.position = transform.position;
+            GameManager.SpawnLoudAudio(clip_dash);
             playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position).normalized * dashImpulse, ForceMode.Impulse);
         }
 
