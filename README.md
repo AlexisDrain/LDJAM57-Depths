@@ -1,5 +1,8 @@
 # LDJAM57-Depths
- 
+
+Play on Newgrounds: https://www.newgrounds.com/portal/view/project/6589301  
+Or play on Itch.io: https://alexclay.itch.io/shark-mayhem  
+
 [Long Description]  
 Unleash your inner shark in this hectic, adrenaline-charged game!  
 
