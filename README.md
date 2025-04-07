@@ -1,9 +1,6 @@
 # LDJAM57-Depths
  
-[Short Description]
-Unleash your inner shark in this hectic, adrenaline-charged game!
-
-[Long Description]
+[Long Description]  
 Unleash your inner shark in this hectic, adrenaline-charged game!  
 
 Made in 3 days for Ludum Dare 57 Jam. Theme: Depths  
