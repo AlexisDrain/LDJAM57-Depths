@@ -222,6 +222,7 @@ MonoBehaviour:
   maxSpeedFull: 25
   maxSpeedSlowdown: 3
   rotateTowardsTargetSpeed: 2
+  trailParticles: {fileID: 551022963972647919}
   direction: {x: 0, y: 0, z: 0}
   ignoreShooter: {fileID: 0}
   isSlowDown: 0

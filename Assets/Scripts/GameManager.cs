@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static bool startedGameOnce = false;
     public static bool gameIsPaused = false;
     public static bool playerIsAlive = true;
+    public static float waterHeight = 30.5f;
     // public static bool playerInUpgradeMenu = false;
     public bool cheatsActivated = false;
 
