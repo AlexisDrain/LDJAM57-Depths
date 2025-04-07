@@ -15,6 +15,7 @@ public class PlayerControllerShark : MonoBehaviour {
     public AudioClip clip_SplashDown;
 
     public float waterHeight = 10f;
+    private float currentCountdownAboveWater = 3f;
     [Header("Read only")]
     public bool _aboveWater = false;
     void Start()
@@ -48,8 +49,14 @@ public class PlayerControllerShark : MonoBehaviour {
                 _aboveWater = true;
                 GameManager.particles_Water.transform.position = transform.position;
                 GameManager.particles_Water.Play();
+                currentCountdownAboveWater = 3f;
             }
             myRigidbody.AddForce(Vector3.down * gravityForce, ForceMode.Force);
+            currentCountdownAboveWater -= Time.deltaTime;
+            if(currentCountdownAboveWater <= 0f) {
+                GetComponent<PlayerHealth>().DamagePlayer(1);
+                currentCountdownAboveWater = 1f;
+            }
         } else {
             if (_aboveWater == true) {
                 GameManager.SpawnLoudAudio(clip_SplashDown);

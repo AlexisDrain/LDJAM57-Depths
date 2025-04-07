@@ -47,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0) {
             onDeathEvent.Invoke();
             GameManager.playerIsAlive = false;
+            GameManager.pressR.SetActive(true);
         } else {
             StartCoroutine("InvunrablePattern");
             onDamageEvent.Invoke();

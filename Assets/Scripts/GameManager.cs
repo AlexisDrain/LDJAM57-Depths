@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     public static Transform playerSpawn;
     public static CircleController playerCircle;
 
+    public static GameObject tutorial1;
+    public static GameObject tutorial2;
+    public static GameObject ending;
+    public static GameObject pressR;
     public static GameObject mainMenu;
     public static GameObject upgrades;
     public static HeartsCounter heartsCounter;
@@ -53,6 +57,14 @@ public class GameManager : MonoBehaviour
         playerSpawn = GameObject.Find("PlayerSpawn").transform;
         playerCircle = GameObject.Find("Player/Circle/Triangle").GetComponent<CircleController>();
 
+        tutorial1 = GameObject.Find("Canvas/Tutorial1");
+        tutorial1.SetActive(false);
+        tutorial2 = GameObject.Find("Canvas/Tutorial2");
+        tutorial2.SetActive(false);
+        ending = GameObject.Find("Canvas/Ending");
+        ending.SetActive(false);
+        pressR = GameObject.Find("Canvas/PressR");
+        pressR.SetActive(false);
         mainMenu = GameObject.Find("Canvas/MainMenu");
         upgrades = GameObject.Find("Canvas/Upgrades");
         upgrades.SetActive(false);
@@ -92,6 +104,9 @@ public class GameManager : MonoBehaviour
         GameManager.mainMenu.SetActive(true);
         Time.timeScale = 0f;
     }
+    public void StartGameButton() {
+        tutorial1.SetActive(true);
+    }
     public void StartWave() {
         Time.timeScale = 1f;
         waves[currentWave].SetActive(true);
@@ -108,12 +123,19 @@ public class GameManager : MonoBehaviour
         bottomBarFill.fillAmount = 0;
 
         if (newWaveIndex == 0) {
+            tutorial1.SetActive(false);
+            tutorial2.SetActive(false);
             upgrade0Event.Invoke();
         }
-        if (newWaveIndex == 1) {
+        else if (newWaveIndex == 1) {
+            tutorial1.SetActive(false);
+            tutorial2.SetActive(true);
             upgrade1Event.Invoke();
+        } else {
+            tutorial1.SetActive(false);
+            tutorial2.SetActive(false);
         }
-        StartWave(); // this was in the Upgrade Skill menu before
+            StartWave(); // this was in the Upgrade Skill menu before
         /*
         if(newWaveIndex != 0) {
             upgrades.SetActive(true);
@@ -136,6 +158,7 @@ public class GameManager : MonoBehaviour
 
                 GameManager.totalKills = 0;
                 GameManager.text_totalKills.text = $"Kills: 0";
+                GameManager.pressR.SetActive(false);
 
                 GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 3;
                 GameManager.heartsCounter.SetCurrentHealth(3);
