@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Reflection;
 using UnityEngine;
 
 public enum ShooterType {
@@ -71,7 +72,8 @@ public class EntityShooter : MonoBehaviour
         Vector3 direction = (GameManager.playerTrans.position - bulletStart.position).normalized;
 
         GameObject missile = GameManager.pool_EnemyMissile.Spawn(bulletStart.position);
-        missile.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
+        // missile.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
+        missile.GetComponent<BulletStats>().direction = direction;
 
         GetComponent<AudioSource>().clip = shootSFX;
         GetComponent<AudioSource>().PlayWebGL();
@@ -88,7 +90,8 @@ public class EntityShooter : MonoBehaviour
         Vector3 direction = (GameManager.playerTrans.position - bulletStart.position).normalized;
 
         GameObject spear = GameManager.pool_EnemySpear.Spawn(bulletStart.position);
-        spear.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
+        // spear.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
+        spear.GetComponent<BulletStats>().direction = direction;
 
         GetComponent<AudioSource>().clip = shootSFX;
         GetComponent<AudioSource>().PlayWebGL();

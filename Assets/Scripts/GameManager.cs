@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -14,15 +15,19 @@ public class GameManager : MonoBehaviour
     public bool cheatsActivated = false;
 
     public List<GameObject> waves = new List<GameObject>();
+    public UnityEvent upgrade0Event = new UnityEvent();
+    public UnityEvent upgrade1Event = new UnityEvent();
     public static int currentWave = 0;
     public static int totalKills = 0;
 
     public static GameManager myGameManager;
     public static Transform playerTrans;
     public static Transform playerSpawn;
+    public static CircleController playerCircle;
 
     public static GameObject mainMenu;
     public static GameObject upgrades;
+    public static HeartsCounter heartsCounter;
     public static Image bottomBarFill;
     public static Animator waveTextAnim;
     public static TextMeshProUGUI text_totalKills;
@@ -35,15 +40,23 @@ public class GameManager : MonoBehaviour
     public static ParticleSystem particles_Blood;
     public static ParticleSystem particles_BloodAboveWater;
     public static ParticleSystem particles_Water;
+
+    public static LayerMask worldMask;
+    public static LayerMask bulletsMask;
+    public static LayerMask entityMask;
+    public static LayerMask triggersMask;
+
     void Awake()
     {
         myGameManager = GetComponent<GameManager>();
         playerTrans = GameObject.Find("Player").transform;
         playerSpawn = GameObject.Find("PlayerSpawn").transform;
+        playerCircle = GameObject.Find("Player/Circle/Triangle").GetComponent<CircleController>();
 
         mainMenu = GameObject.Find("Canvas/MainMenu");
         upgrades = GameObject.Find("Canvas/Upgrades");
         upgrades.SetActive(false);
+        heartsCounter = GameObject.Find("Canvas/HeartsCounter").GetComponent<HeartsCounter>();
         bottomBarFill = GameObject.Find("BottomBarFill").GetComponent<Image>();
         waveTextAnim = GameObject.Find("WaveText").GetComponent<Animator>();
         text_totalKills = GameObject.Find("TotalKills").GetComponent<TextMeshProUGUI>();
@@ -57,8 +70,16 @@ public class GameManager : MonoBehaviour
         particles_BloodAboveWater = transform.Find("Particles_BloodAboveWater").GetComponent<ParticleSystem>();
         particles_Water = transform.Find("Particles_Water").GetComponent<ParticleSystem>();
 
+
+        worldMask = LayerMask.NameToLayer("World");
+        bulletsMask = LayerMask.NameToLayer("Bullets");
+        entityMask = LayerMask.NameToLayer("Entity");
+        triggersMask = LayerMask.NameToLayer("Triggers");
+
+
         Time.timeScale = 0f;
         SetNewWave(0);
+        PauseGame();
         // StartWave(); called in Start Game button
     }
     public void ResumeGameButton() {
@@ -85,11 +106,21 @@ public class GameManager : MonoBehaviour
         waveTextAnim.GetComponent<TextMeshProUGUI>().text = $"Wave {newWaveIndex+1} of 10";
         waveTextAnim.SetTrigger("ShowText");
         bottomBarFill.fillAmount = 0;
+
+        if (newWaveIndex == 0) {
+            upgrade0Event.Invoke();
+        }
+        if (newWaveIndex == 1) {
+            upgrade1Event.Invoke();
+        }
+        StartWave(); // this was in the Upgrade Skill menu before
+        /*
         if(newWaveIndex != 0) {
             upgrades.SetActive(true);
             playerInUpgradeMenu = true;
             Cursor.visible = true;
         }
+        */
     }
 
     void Update()
@@ -107,7 +138,10 @@ public class GameManager : MonoBehaviour
                 GameManager.text_totalKills.text = $"Kills: 0";
 
                 GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 3;
+                GameManager.heartsCounter.SetCurrentHealth(3);
                 GameManager.playerTrans.GetComponent<Rigidbody>().position = GameManager.playerSpawn.position;
+                GameManager.playerTrans.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                GameManager.playerTrans.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
                 GameManager.playerTrans.position = GameManager.playerSpawn.position;
                 playerIsAlive = true;
             }

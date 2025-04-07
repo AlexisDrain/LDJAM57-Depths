@@ -46,6 +46,9 @@ BFXR https://www.bfxr.net/
 - Bite:
 Sonniss.com - GDC - Game Audio Bundle\Mattia Cellotto - Crunch Mode\Celery,Bite,Crunch,Slow,Bone,Break,Stick,Creak,Various07.wav
 
+- Dash hold:
+Sonnis 2017 - Game Audio Bundle\Glitchedtones - Drones\Alien Spacecraft Electrical Drone 03.wav
+
 - Enemy spear weapon:
 Sonniss.com - GDC 2017 - Game Audio Bundle\Fascinated Sound - Scene Shop Tool Box\Impact Nail Gun 01 Single Shot Compressed Air and Action.wav
 

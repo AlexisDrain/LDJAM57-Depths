@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
         }
         currentHealth -= newDamage;
 
+        GameManager.heartsCounter.SetCurrentHealth(currentHealth);
+
         if (currentHealth <= 0) {
             onDeathEvent.Invoke();
             GameManager.playerIsAlive = false;

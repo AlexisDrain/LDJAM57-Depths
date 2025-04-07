@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4605157107833093518}
   - component: {fileID: 4578259645613573893}
   - component: {fileID: 6422492746555055245}
-  - component: {fileID: 5030961838319547078}
+  - component: {fileID: 1322989113032446189}
   - component: {fileID: 3983894365235620817}
   - component: {fileID: 3292411133810860925}
   - component: {fileID: 8497752620697868383}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0292dd84a7eac468d4ce82b5913b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5030961838319547078
+--- !u!114 &1322989113032446189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 637652065766230756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e5ec3b59b35894bab6520ac1e62088, type: 3}
+  m_Script: {fileID: 11500000, guid: 4944e6a68fcd21241b2de97632107300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onTouchEvent:
@@ -246,4 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53872cff81004043b61bbc082133fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootForce: 50
+  maxSpeedFull: 30
+  maxSpeedSlowdown: 3
+  direction: {x: 0, y: 0, z: 0}
   ignoreShooter: {fileID: 0}
