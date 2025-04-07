@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent initGameEvent = new UnityEvent();
     public UnityEvent upgrade0Event = new UnityEvent();
     public UnityEvent upgrade1Event = new UnityEvent();
+    public UnityEvent endingEvent = new UnityEvent();
     public List<GameObject> waves = new List<GameObject>();
     public static int currentWave = 0;
     public static int totalKills = 0;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
     public void PauseGame() {
+        Cursor.visible = true;
         GameManager.gameIsPaused = true;
         GameManager.mainMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -141,11 +143,18 @@ public class GameManager : MonoBehaviour
             tutorial1.SetActive(false);
             tutorial2.SetActive(true);
             upgrade1Event.Invoke();
+        }
+        else if (newWaveIndex == 21) {
+            Time.timeScale = 0f;
+            endingEvent.Invoke();
+            return;
         } else {
             tutorial1.SetActive(false);
             tutorial2.SetActive(false);
         }
-            StartWave(); // this was in the Upgrade Skill menu before
+
+        
+        StartWave(); // this was in the Upgrade Skill menu before
         /*
         if(newWaveIndex != 0) {
             upgrades.SetActive(true);

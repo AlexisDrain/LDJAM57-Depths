@@ -121,7 +121,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3185056844976283323}
   m_Direction: 3
   m_Value: 0
-  m_Size: 0.3973632
+  m_Size: 0.35082057
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -165,7 +165,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 75, y: 100}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1839347361379070396
 CanvasRenderer:
@@ -260,18 +260,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -498,8 +486,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <  Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e2f686a57ceb80141b7b9cc7aa4c7622, type: 2}
+  m_sharedMaterial: {fileID: 565294951801827930, guid: e2f686a57ceb80141b7b9cc7aa4c7622, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -523,8 +511,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -606,7 +594,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 1185, y: 1050}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7211557990019535194
 CanvasRenderer:
@@ -715,7 +703,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 18
+  m_GlobalPointSize: 20
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -744,24 +732,26 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: "=== Credits ===\r\n\r\nA game by Alexis Clay\r\nhttps://alexclay.itch.io/\r\n\r\nNo
-    generative AI was used in the creation of this game.\r\n\r\n=== Tools ===\r\n\r\nUnity
-    6, Articy Draft X, ProBuilder, Aseprite\r\n\r\n=== Music ===\r\n\r\nTaskless
-    Sheep - Meadow Mayhem - Craving\r\nhttps://www.muddasheep.com/projects/music/tasklesssheep-meadowmayhem\r\n\r\n\r\n===
-    Fonts ===  \r\n\r\n- Lingua Franca - OFL (SIL Open Font License)\r\nhttps://fontlibrary.org/en/font/lingua-franca\r\n\r\n-
-    Liberation Sans (Menu text) - OFL (SIL Open Font License)\r\nhttps://www.dafont.com/liberation-sans.font\r\n\r\n\r\n===
-    Textures ===\r\n\r\n- Doors:  \r\nImage by pikisuperstar on Freepik  \r\nhttps://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais\r\n\r\n===
-    SFX ===\r\n\r\n- UI buttons click SFX:\r\nHalfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- UI buttons hover + blood pressure minigame.\r\nBFXR https://www.bfxr.net/\r\n\r\n-
-    Footsteps (wood floor):\r\nhttps://freesound.org/people/avakas/sounds/172362/\r\n\r\n-
-    Dice roll success\r\nHalfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- Dice roll fail\r\nSonniss.com - GDC 2016 - Game Audio Bundle\\George
-    Karagioules - SFX for Board Games\\Dice 9.wav\r\nSonniss.com - GDC 2024 - Game
-    Audio Bundle\\UberDuo - Game Night Audio Props\\GAMEBoard_Dice, Contact, Die,
-    Roll, On Table_UberDuo_Game.wav\r\n\r\n- Background Ambience:\r\nHalfquake Sunrise
-    by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- Alarm\r\nSonniss.com - GDC 2020 - Game Audio Bundle\\David Dumais Audio
-    - Alarms Sound Fx Pack 1\\SmlAlarm4_Single_DDM_Loop.wav"
+  m_Text: "Full credits + Source code  \r\nhttps://github.com/AlexisDrain/LDJAM57-Depths   
+    \r\n\r\n=== Credits ===  \r\n\r\nA game by Alexis Clay  \r\nhttps://alexclay.itch.io/ 
+    \r\n\r\nMade in 3 days for Ludum Dare 57 Jam. Theme: Depths.  \r\n\r\nNo generative
+    AI was used in the creation of this game.  \r\n\r\n=== Tools ===  \r\n\r\nUnity
+    6, Aseprite, ProBuilder, BFXR  \r\n\r\n=== Music ===  \r\n\r\n- Song 1 - CRM
+    Sonic Field FULL Loop  \r\nhttps://wowsound.com/our-music/tracks/crm-sonic-field-full-loop.aspx 
+    \r\n\r\n- Song 2 - NCRS 03 DESCENDING AIR CURRENT FULL Loop  \r\nhttps://wowsound.com/our-music/tracks/ncrs-03-descending-air-current-full-loop.aspx 
+    \r\n\r\n=== SFX ===  \r\n\r\n- UI buttons click SFX  \r\nHalfquake 1 by Muddasheep:
+    https://store.steampowered.com/app/644320/Halfquake_Trilogy/  \r\n\r\n- UI buttons
+    hover. General sound effects.  \r\nBFXR https://www.bfxr.net/  \r\n\r\n- Bite: 
+    \r\nSonniss.com - GDC - Game Audio Bundle\\Mattia Cellotto - Crunch Mode\\Celery,Bite,Crunch,Slow,Bone,Break,Stick,Creak,Various07.wav 
+    \r\n\r\n- Helicopter  \r\nSonniss.com - GDC 2023 - Game Audio Bundle\\InspectorJ
+    - 96 General Library\\AEROHeli_InsJ_Helicopter_Flyby_Close_03_Chinook.wav  \r\n\r\n-
+    Enemy spear weapon:  \r\nSonniss.com - GDC 2017 - Game Audio Bundle\\Fascinated
+    Sound - Scene Shop Tool Box\\Impact Nail Gun 01 Single Shot Compressed Air and
+    Action.wav  \r\n\r\n- Water splash  \r\nSonniss.com - GDC 2020 - Game Audio Bundle\\Bluezone
+    - Splash\\Bluezone_BC0256_water_splash_small_008.wav  \r\nSonniss.com - GDC -
+    Game Audio Bundle\\Soundopolis - Water 01\\Water_Splash_SeaLion_Fienup_001.wav 
+    \r\n\r\n=== Font ===  \r\n\r\nBebas by Dharma Type  \r\nhttps://www.dafont.com/bebas.font 
+    \r\nhttp://dharmatype.com  \r\n\r\nLiberationSans by Red Hat - OFL  \r\nhttps://www.dafont.com/liberation-sans.font  "
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 1
@@ -933,81 +923,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!1 &7110755874327138477
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7443328765580093407}
-  - component: {fileID: 8912747277005539406}
-  - component: {fileID: 4419508523316088892}
-  m_Layer: 5
-  m_Name: LogoArticy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7443328765580093407
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110755874327138477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1088364921180925668}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135, y: -100}
-  m_SizeDelta: {x: 623, y: 152}
-  m_Pivot: {x: 0, y: 1}
---- !u!222 &8912747277005539406
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110755874327138477}
-  m_CullTransparentMesh: 1
---- !u!114 &4419508523316088892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110755874327138477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d4ef4834e659dd4d9c00089c25f65d1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7954231690672636067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +984,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088364921180925668}
+  - component: {fileID: 6172346810949791333}
+  - component: {fileID: 767011210104930396}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1090,7 +1007,6 @@ RectTransform:
   m_Children:
   - {fileID: 5403507857909322097}
   - {fileID: 7512325622669429810}
-  - {fileID: 7443328765580093407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1098,6 +1014,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6172346810949791333
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931360138049046813}
+  m_CullTransparentMesh: 1
+--- !u!114 &767011210104930396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931360138049046813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9098039}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &9085547063099341173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,24 +1117,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "=== Credits ===\r\n\r\nA game by Alexis Clay\r\nhttps://alexclay.itch.io/\r\n\r\nNo
-    generative AI was used in the creation of this game.\r\n\r\n=== Tools ===\r\n\r\nUnity
-    6, Articy Draft X, ProBuilder, Aseprite\r\n\r\n=== Music ===\r\n\r\nTaskless
-    Sheep - Meadow Mayhem - Craving\r\nhttps://www.muddasheep.com/projects/music/tasklesssheep-meadowmayhem\r\n\r\n\r\n===
-    Fonts ===  \r\n\r\n- Lingua Franca - OFL (SIL Open Font License)\r\nhttps://fontlibrary.org/en/font/lingua-franca\r\n\r\n-
-    Liberation Sans (Menu text) - OFL (SIL Open Font License)\r\nhttps://www.dafont.com/liberation-sans.font\r\n\r\n\r\n===
-    Textures ===\r\n\r\n- Doors:  \r\nImage by pikisuperstar on Freepik  \r\nhttps://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais\r\n\r\n===
-    SFX ===\r\n\r\n- UI buttons click SFX:\r\nHalfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- UI buttons hover + blood pressure minigame.\r\nBFXR https://www.bfxr.net/\r\n\r\n-
-    Footsteps (wood floor):\r\nhttps://freesound.org/people/avakas/sounds/172362/\r\n\r\n-
-    Dice roll success\r\nHalfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- Dice roll fail\r\nSonniss.com - GDC 2016 - Game Audio Bundle\\George
-    Karagioules - SFX for Board Games\\Dice 9.wav\r\nSonniss.com - GDC 2024 - Game
-    Audio Bundle\\UberDuo - Game Night Audio Props\\GAMEBoard_Dice, Contact, Die,
-    Roll, On Table_UberDuo_Game.wav\r\n\r\n- Background Ambience:\r\nHalfquake Sunrise
-    by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/ 
-    \r\n\r\n- Alarm\r\nSonniss.com - GDC 2020 - Game Audio Bundle\\David Dumais Audio
-    - Alarms Sound Fx Pack 1\\SmlAlarm4_Single_DDM_Loop.wav\u200B"
+  m_text: "Full credits + Source code  \r\nhttps://github.com/AlexisDrain/LDJAM57-Depths   
+    \r\n\r\n=== Credits ===  \r\n\r\nA game by Alexis Clay  \r\nhttps://alexclay.itch.io/ 
+    \r\n\r\nMade in 3 days for Ludum Dare 57 Jam. Theme: Depths.  \r\n\r\nNo generative
+    AI was used in the creation of this game.  \r\n\r\n=== Tools ===  \r\n\r\nUnity
+    6, Aseprite, ProBuilder, BFXR  \r\n\r\n=== Music ===  \r\n\r\n- Song 1 - CRM
+    Sonic Field FULL Loop  \r\nhttps://wowsound.com/our-music/tracks/crm-sonic-field-full-loop.aspx 
+    \r\n\r\n- Song 2 - NCRS 03 DESCENDING AIR CURRENT FULL Loop  \r\nhttps://wowsound.com/our-music/tracks/ncrs-03-descending-air-current-full-loop.aspx 
+    \r\n\r\n=== SFX ===  \r\n\r\n- UI buttons click SFX  \r\nHalfquake 1 by Muddasheep:
+    https://store.steampowered.com/app/644320/Halfquake_Trilogy/  \r\n\r\n- UI buttons
+    hover. General sound effects.  \r\nBFXR https://www.bfxr.net/  \r\n\r\n- Bite: 
+    \r\nSonniss.com - GDC - Game Audio Bundle\\Mattia Cellotto - Crunch Mode\\Celery,Bite,Crunch,Slow,Bone,Break,Stick,Creak,Various07.wav 
+    \r\n\r\n- Helicopter  \r\nSonniss.com - GDC 2023 - Game Audio Bundle\\InspectorJ
+    - 96 General Library\\AEROHeli_InsJ_Helicopter_Flyby_Close_03_Chinook.wav  \r\n\r\n-
+    Enemy spear weapon:  \r\nSonniss.com - GDC 2017 - Game Audio Bundle\\Fascinated
+    Sound - Scene Shop Tool Box\\Impact Nail Gun 01 Single Shot Compressed Air and
+    Action.wav  \r\n\r\n- Water splash  \r\nSonniss.com - GDC 2020 - Game Audio Bundle\\Bluezone
+    - Splash\\Bluezone_BC0256_water_splash_small_008.wav  \r\nSonniss.com - GDC -
+    Game Audio Bundle\\Soundopolis - Water 01\\Water_Splash_SeaLion_Fienup_001.wav 
+    \r\n\r\n=== Font ===  \r\n\r\nBebas by Dharma Type  \r\nhttps://www.dafont.com/bebas.font 
+    \r\nhttp://dharmatype.com  \r\n\r\nLiberationSans by Red Hat - OFL  \r\nhttps://www.dafont.com/liberation-sans.font 
+    \u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1207,8 +1164,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
