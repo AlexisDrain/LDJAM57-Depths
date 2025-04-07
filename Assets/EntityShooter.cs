@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum ShooterType {
     Spear,
-    Submarine
+    Submarine,
+    Eyeball
 }
 
 public class EntityShooter : MonoBehaviour
@@ -42,6 +43,9 @@ public class EntityShooter : MonoBehaviour
                 if (shootType == ShooterType.Submarine) {
                     StartCoroutine("ShootPattern2");
                 }
+                if (shootType == ShooterType.Eyeball) {
+                    StartCoroutine("ShootPattern3");
+                }
             }
         }
         /*
@@ -70,6 +74,13 @@ public class EntityShooter : MonoBehaviour
         GetComponent<AudioSource>().PlayWebGL();
         yield return new WaitForSeconds(1f);
         ShootMissile();
+    }
+    private IEnumerator ShootPattern3() {
+        shootTimerSprite.GetComponent<Animator>().SetTrigger("ShootWarning");
+        GetComponent<AudioSource>().clip = powerUpSFX;
+        GetComponent<AudioSource>().PlayWebGL();
+        yield return new WaitForSeconds(1f);
+        ShootEyeball();
     }
 
     private void ShootMissile() {
@@ -106,5 +117,22 @@ public class EntityShooter : MonoBehaviour
         }
         spear.GetComponent<BulletStats>().ignoreShooter = overrideCollider;
         Physics.IgnoreCollision(spear.GetComponent<Collider>(), spear.GetComponent<BulletStats>().ignoreShooter, true);
+    }
+    private void ShootEyeball() {
+        Vector3 direction = (GameManager.playerTrans.position - bulletStart.position).normalized;
+
+        GameObject eyeball = GameManager.pool_EnemyEyeBullet.Spawn(bulletStart.position);
+        // spear.GetComponent<Rigidbody>().AddForce(direction * shootImpulse, ForceMode.Impulse);
+        eyeball.GetComponent<BulletStats>().direction = direction;
+
+        GetComponent<AudioSource>().clip = shootSFX;
+        GetComponent<AudioSource>().PlayWebGL();
+
+        // ignore shooter
+        if (eyeball.GetComponent<BulletStats>().ignoreShooter) {
+            Physics.IgnoreCollision(eyeball.GetComponent<Collider>(), eyeball.GetComponent<BulletStats>().ignoreShooter, false);
+        }
+        eyeball.GetComponent<BulletStats>().ignoreShooter = overrideCollider;
+        Physics.IgnoreCollision(eyeball.GetComponent<Collider>(), eyeball.GetComponent<BulletStats>().ignoreShooter, true);
     }
 }

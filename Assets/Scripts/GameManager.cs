@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     private static Pool pool_LoudAudioSource;
     public static Pool pool_EnemySpear;
     public static Pool pool_EnemyMissile;
+    public static Pool pool_EnemyEyeBullet;
     public static Pool pool_Explosion;
 
     public static ParticleSystem particles_Blood;
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         pool_EnemySpear = transform.Find("Pool_EnemySpear").GetComponent<Pool>();
         pool_EnemyMissile = transform.Find("Pool_EnemyMissile").GetComponent<Pool>();
+        pool_EnemyEyeBullet = transform.Find("Pool_EnemyEyeBullet").GetComponent<Pool>();
         pool_Explosion = transform.Find("Pool_Explosion").GetComponent<Pool>();
 
         particles_Blood = transform.Find("Particles_Blood").GetComponent<ParticleSystem>();
@@ -172,8 +174,10 @@ public class GameManager : MonoBehaviour
         if (cheatsActivated) {
             if(Input.GetKey(KeyCode.LeftShift)) {
                 if(Input.GetKeyDown(KeyCode.Alpha1)) {
-                    SetNewWave(1);
+                    currentWave += 1;
+                    SetNewWave(currentWave);
                 }
+                /*
                 if (Input.GetKeyDown(KeyCode.Alpha2)) {
                     SetNewWave(2);
                 }
@@ -198,6 +202,7 @@ public class GameManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Alpha9)) {
                     SetNewWave(9);
                 }
+                */
             }
         }
     }

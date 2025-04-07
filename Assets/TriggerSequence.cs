@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class TriggerSequence : MonoBehaviour
 {
+    [Header("Read only. Calculated automatically")]
     public int sequenceTotal = 0;
     public int current_sequence = 0;
 

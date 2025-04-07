@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 103830747281561569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -2.000002, y: -1.42, z: 0}
+  m_LocalPosition: {x: 1, y: -1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.12278779, y: -0.12278779, z: 0.6963643, w: 0.6963643}
   m_LocalPosition: {x: -1, y: 0.5, z: -0.5}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.5, y: -1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5375253933128789932}
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3602
+  m_VersionIndex: 3636
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3426,7 +3426,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3604,6 +3604,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7122538059589856339}
+        m_TargetAssemblyTypeName: PlayAudioSourceSFX, Assembly-CSharp
+        m_MethodName: PlayVariablePitchSFXInGameManager
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 012e8b523d0dd4f4e9cd59f295886ee2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &2355363216653528457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3624,7 +3636,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 7.8770714, y: 2.8469963, z: 2}
-  m_Center: {x: -3.4385357, y: 0.5008507, z: -0.5}
+  m_Center: {x: 1.5614643, y: 0.5008507, z: -0.5}
 --- !u!114 &6999996802435261660
 MonoBehaviour:
   m_ObjectHideFlags: 0
