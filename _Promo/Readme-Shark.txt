@@ -46,11 +46,18 @@ BFXR https://www.bfxr.net/
 - Bite:
 Sonniss.com - GDC - Game Audio Bundle\Mattia Cellotto - Crunch Mode\Celery,Bite,Crunch,Slow,Bone,Break,Stick,Creak,Various07.wav
 
-- Dash hold:
-Sonnis 2017 - Game Audio Bundle\Glitchedtones - Drones\Alien Spacecraft Electrical Drone 03.wav
+- Helicopter
+Sonniss.com - GDC 2023 - Game Audio Bundle\InspectorJ - 96 General Library\AEROHeli_InsJ_Helicopter_Flyby_Close_03_Chinook.wav
+
+- Dash hold (removed):
+Sonniss.com - GDC 2017 - Game Audio Bundle\Glitchedtones - Drones\Alien Spacecraft Electrical Drone 03.wav
 
 - Enemy spear weapon:
 Sonniss.com - GDC 2017 - Game Audio Bundle\Fascinated Sound - Scene Shop Tool Box\Impact Nail Gun 01 Single Shot Compressed Air and Action.wav
+
+- Water splash
+Sonniss.com - GDC 2020 - Game Audio Bundle\Bluezone - Splash\Bluezone_BC0256_water_splash_small_008.wav
+Sonniss.com - GDC - Game Audio Bundle\Soundopolis - Water 01\Water_Splash_SeaLion_Fienup_001.wav
 
 === Font ===
 

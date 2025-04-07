@@ -42,10 +42,10 @@ public class CircleController : MonoBehaviour
             SpriteRenderer.color = regularDashColor;
         }
 
-
         if (GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false
-            && GameManager.playerIsAlive == true
-            && GameManager.playerInUpgradeMenu == false) {
+            && GameManager.gameIsPaused == false
+            && GameManager.playerIsAlive == true) {
+            //&& GameManager.playerInUpgradeMenu == false
 
             if (Input.GetButtonDown("Dash")) {
                 if (Cursor.visible == true) {

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static bool startedGameOnce = false;
     public static bool gameIsPaused = false;
     public static bool playerIsAlive = true;
-    public static bool playerInUpgradeMenu = false;
+    // public static bool playerInUpgradeMenu = false;
     public bool cheatsActivated = false;
 
     public List<GameObject> waves = new List<GameObject>();
@@ -95,8 +95,8 @@ public class GameManager : MonoBehaviour
     public void StartWave() {
         Time.timeScale = 1f;
         waves[currentWave].SetActive(true);
+        gameIsPaused = false;
         startedGameOnce = true;
-        playerInUpgradeMenu = false;
     }
     public void SetNewWave(int newWaveIndex) {
         for (int i = 0; i < waves.Count; i++) {

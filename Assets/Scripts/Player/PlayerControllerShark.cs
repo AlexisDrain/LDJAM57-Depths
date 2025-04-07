@@ -11,6 +11,9 @@ public class PlayerControllerShark : MonoBehaviour {
     public float gravityForce = 10f;
     private Rigidbody myRigidbody;
 
+    public AudioClip clip_SplashUp;
+    public AudioClip clip_SplashDown;
+
     public float waterHeight = 10f;
     [Header("Read only")]
     public bool _aboveWater = false;
@@ -41,6 +44,7 @@ public class PlayerControllerShark : MonoBehaviour {
 
         if(transform.position.y > waterHeight) {
             if(_aboveWater == false) {
+                GameManager.SpawnLoudAudio(clip_SplashUp);
                 _aboveWater = true;
                 GameManager.particles_Water.transform.position = transform.position;
                 GameManager.particles_Water.Play();
@@ -48,6 +52,7 @@ public class PlayerControllerShark : MonoBehaviour {
             myRigidbody.AddForce(Vector3.down * gravityForce, ForceMode.Force);
         } else {
             if (_aboveWater == true) {
+                GameManager.SpawnLoudAudio(clip_SplashDown);
                 _aboveWater = false;
                 GameManager.particles_Water.transform.position = transform.position;
                 GameManager.particles_Water.Play();
