@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 3;
-    public int currentHealth = 3;
+    public int maxHealth = 5;
+    public int currentHealth = 5;
 
     public SpriteRenderer playerSprite;
     public UnityEvent onDamageEvent;
@@ -31,7 +31,11 @@ public class PlayerHealth : MonoBehaviour
         playerSprite.enabled = true;
         _invunrable = false;
     }
-    // Update is called once per frame
+    public void HealPlayer(int newHeal) {
+        currentHealth += currentHealth;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        GameManager.heartsCounter.SetCurrentHealth(currentHealth);
+    }
     public void DamagePlayer(int newDamage)
     {
         if(newDamage < 0) {

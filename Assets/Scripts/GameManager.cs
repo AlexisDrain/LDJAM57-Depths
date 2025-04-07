@@ -14,9 +14,10 @@ public class GameManager : MonoBehaviour
     // public static bool playerInUpgradeMenu = false;
     public bool cheatsActivated = false;
 
-    public List<GameObject> waves = new List<GameObject>();
+    public UnityEvent initGameEvent = new UnityEvent();
     public UnityEvent upgrade0Event = new UnityEvent();
     public UnityEvent upgrade1Event = new UnityEvent();
+    public List<GameObject> waves = new List<GameObject>();
     public static int currentWave = 0;
     public static int totalKills = 0;
 
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
         entityMask = LayerMask.NameToLayer("Entity");
         triggersMask = LayerMask.NameToLayer("Triggers");
 
-
+        initGameEvent.Invoke();
         Time.timeScale = 0f;
         SetNewWave(0);
         PauseGame();
@@ -167,8 +168,8 @@ public class GameManager : MonoBehaviour
                 GameManager.text_totalKills.text = $"Kills: 0";
                 GameManager.pressR.SetActive(false);
 
-                GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 3;
-                GameManager.heartsCounter.SetCurrentHealth(3);
+                GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth = 5;
+                GameManager.heartsCounter.SetCurrentHealth(5);
                 GameManager.playerTrans.GetComponent<Rigidbody>().position = GameManager.playerSpawn.position;
                 GameManager.playerTrans.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 GameManager.playerTrans.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
