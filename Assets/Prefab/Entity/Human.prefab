@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1073285338977004756}
   - component: {fileID: 2084725970464537522}
   - component: {fileID: 6333557011364930214}
+  - component: {fileID: 1015151404040064113}
   m_Layer: 8
   m_Name: Human
   m_TagString: Untagged
@@ -90,6 +91,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1015151404040064113}
+        m_TargetAssemblyTypeName: PlayAudioSourceSFX, Assembly-CSharp
+        m_MethodName: PlayVariablePitchSFXInGameManager
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c1e95f3066f484b4ca47c542dc9681e4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084725970464537522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +137,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1477118, y: 1.8469963, z: 1}
   m_Center: {x: -0.07385588, y: 0.0008506775, z: 0}
+--- !u!114 &1015151404040064113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045615875115041489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5b77255a94d134b99ff3bdf68a5e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAudioSourceVolume: 1
 --- !u!1 &3298928677041357318
 GameObject:
   m_ObjectHideFlags: 0

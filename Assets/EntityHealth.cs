@@ -4,7 +4,8 @@ using UnityEngine.Events;
 public class EntityHealth : MonoBehaviour
 {
     public int health = 1;
-    // public UnityEvent onKill;
+    public UnityEvent onDamage;
+    public UnityEvent onKill;
     void Start()
     {
         
@@ -28,7 +29,10 @@ public class EntityHealth : MonoBehaviour
                 GameManager.particles_Blood.Play();
             }
             transform.parent.GetComponent<TriggerSequence>().IncrementSequence();
+            onKill.Invoke();
             Destroy(gameObject);
+        } else {
+            onDamage.Invoke();
         }
     }
 }

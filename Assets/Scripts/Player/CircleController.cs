@@ -7,9 +7,14 @@ public class CircleController : MonoBehaviour
 
     public AudioClip clip_dash;
     private Rigidbody playerRigidbody;
+    private SpriteRenderer SpriteRenderer;
+
+    public Color regularDashColor;
+    public Color cannotDashColor;
     void Start()
     {
         playerRigidbody = GameManager.playerTrans.GetComponent<Rigidbody>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,6 +30,11 @@ public class CircleController : MonoBehaviour
         float angle = Mathf.Atan2(vec2.y - vec1.y, vec2.x - vec1.x) * 180 / Mathf.PI;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
+        if(GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater) {
+            SpriteRenderer.color = cannotDashColor;
+        } else {
+            SpriteRenderer.color = regularDashColor;
+        }
 
         if (Input.GetButtonDown("Dash")
             && GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false

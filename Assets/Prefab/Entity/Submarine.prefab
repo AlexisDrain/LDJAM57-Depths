@@ -2365,6 +2365,7 @@ GameObject:
   - component: {fileID: 6999996802435261660}
   - component: {fileID: 5297637546060667419}
   - component: {fileID: 8626078667295036982}
+  - component: {fileID: 7122538059589856339}
   m_Layer: 8
   m_Name: Submarine
   m_TagString: Untagged
@@ -2456,6 +2457,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7122538059589856339}
+        m_TargetAssemblyTypeName: PlayAudioSourceSFX, Assembly-CSharp
+        m_MethodName: PlayVariablePitchSFXInGameManager
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c1e95f3066f484b4ca47c542dc9681e4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onKill:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7122538059589856339}
+        m_TargetAssemblyTypeName: PlayAudioSourceSFX, Assembly-CSharp
+        m_MethodName: PlayVariablePitchSFXInGameManager
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c1e95f3066f484b4ca47c542dc9681e4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &2355363216653528457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2611,6 +2642,19 @@ MonoBehaviour:
   target: {fileID: 0}
   myRigidbody: {fileID: 1726370601642943339}
   mySprite: {fileID: 0}
+--- !u!114 &7122538059589856339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225533511905456375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5b77255a94d134b99ff3bdf68a5e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAudioSourceVolume: 1
 --- !u!1 &7210557900583098284
 GameObject:
   m_ObjectHideFlags: 0
