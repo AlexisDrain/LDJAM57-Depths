@@ -8,6 +8,7 @@ public class TriggerSequence : MonoBehaviour
     public int sequenceTotal = 0;
     public int current_sequence = 0;
 
+    [Header("Deprecated")]
     public UnityEvent sequenceEvent;
     void OnEnable()
     {
@@ -39,7 +40,9 @@ public class TriggerSequence : MonoBehaviour
         //GameManager.bottomBarFill.fillAmount = (float)current_sequence / (float)sequenceTotal;
 
         if (current_sequence >= sequenceTotal) {
-            sequenceEvent.Invoke();
+            GameManager.currentWave += 1;
+            GameManager.myGameManager.SetNewWave(GameManager.currentWave);
+            // sequenceEvent.Invoke();
         }
     }
 }

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public static GameObject ending;
     public static GameObject pressR;
     public static GameObject mainMenu;
+    public static GameObject credits;
     public static GameObject upgrades;
     public static HeartsCounter heartsCounter;
     public static Image bottomBarFill;
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
         pressR = GameObject.Find("Canvas/PressR");
         pressR.SetActive(false);
         mainMenu = GameObject.Find("Canvas/MainMenu");
+        credits = GameObject.Find("Canvas/Credits");
+        credits.SetActive(false);
         upgrades = GameObject.Find("Canvas/Upgrades");
         upgrades.SetActive(false);
         heartsCounter = GameObject.Find("Canvas/HeartsCounter").GetComponent<HeartsCounter>();
@@ -152,6 +155,8 @@ public class GameManager : MonoBehaviour
 
         if (startedGameOnce == true && Input.GetButtonDown("Pause")) {
             GameManager.myGameManager.PauseGame();
+            GameManager.mainMenu.SetActive(true);
+            GameManager.credits.SetActive(false);
         }
         if (playerIsAlive == false) {
             if(Input.GetButtonDown("Restart")) {

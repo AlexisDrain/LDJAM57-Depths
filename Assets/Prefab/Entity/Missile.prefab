@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootForce: 50
-  maxSpeedFull: 30
+  maxSpeedFull: 25
   maxSpeedSlowdown: 3
-  rotateTowardsTargetSpeed: 3
+  rotateTowardsTargetSpeed: 2
   direction: {x: 0, y: 0, z: 0}
   ignoreShooter: {fileID: 0}
   isSlowDown: 0
