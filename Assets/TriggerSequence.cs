@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,13 +8,20 @@ public class TriggerSequence : MonoBehaviour
     public int current_sequence = 0;
 
     public UnityEvent sequenceEvent;
-    void Start()
+    void OnEnable()
     {
+        current_sequence = 0;
         sequenceTotal = 0;
         for (int i = 0; i < transform.childCount; i++) {
             transform.GetChild(i).gameObject.SetActive(true);
             sequenceTotal += 1;
         }
+        /* include inActive objects after we deactivate them
+        for (int i = 0; i < children.Count; i++) {
+            children[i].SetActive(true);
+            sequenceTotal += 1;
+        }
+        */
     }
 
     // Update is called once per frame

@@ -49,6 +49,16 @@ public class CircleController : MonoBehaviour
             && GameManager.playerInUpgradeMenu == false) {
 
             if (Input.GetButtonDown("Dash")) {
+                if (Cursor.visible == true) {
+                    Cursor.visible = false;
+                }
+                // GameManager.playerTrans.position = transform.position;
+                GameManager.SpawnLoudAudio(clip_dash);
+                playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position).normalized * dashImpulse, ForceMode.Impulse);
+
+            }
+            /* OLD. slowdown mechanics
+            if (Input.GetButtonDown("Dash")) {
                 myAudioSource.clip = clip_dashHold;
                 myAudioSource.PlayWebGL();
                 orbitParticles.Play();
@@ -59,6 +69,7 @@ public class CircleController : MonoBehaviour
             //if (Input.GetButton("Dash")) {
             //    slowdownCollider.SetActive(true);
             //}
+
 
             if (Input.GetButtonUp("Dash") && _isSlowingDown == true) {
                 if (Cursor.visible == true) {
@@ -74,14 +85,16 @@ public class CircleController : MonoBehaviour
                 playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position).normalized * dashImpulse, ForceMode.Impulse);
 
             }
+            */
         }
+        /*
         if (Input.GetButtonUp("Dash")) {
             slowdownCollider.SetActive(false);
             orbitParticles.Stop();
             orbitParticles.Clear();
             myAudioSource.StopWebGL();
         }
-
+        */
         // transform.localPosition = Vector3.ClampMagnitude(transform.position - GameManager.playerTrans.position, 15f);
     }
 }
