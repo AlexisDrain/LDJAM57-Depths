@@ -1859,7 +1859,6 @@ GameObject:
   - component: {fileID: 4483990923866247287}
   - component: {fileID: 5126665275181101685}
   - component: {fileID: 4433450870077090812}
-  - component: {fileID: 6615336726238644453}
   m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -3564,37 +3563,10 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &6615336726238644453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856791012331578024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2de95a3b625ca40a707e7a6e21e981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9113908661926796815}
-        m_TargetAssemblyTypeName: EntityHealth, Assembly-CSharp
-        m_MethodName: DamageEntity
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

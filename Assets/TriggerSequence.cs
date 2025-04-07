@@ -41,7 +41,6 @@ public class TriggerSequence : MonoBehaviour
 
         if (current_sequence >= sequenceTotal) {
             GameManager.currentWave += 1;
-            GameManager.playerTrans.GetComponent<PlayerHealth>().HealPlayer(5);
             GameManager.myGameManager.SetNewWave(GameManager.currentWave);
             // sequenceEvent.Invoke();
         }
