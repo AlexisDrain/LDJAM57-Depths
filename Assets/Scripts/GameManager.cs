@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             waves[i].SetActive(false);
         }
         currentWave = newWaveIndex;
-        waveTextAnim.GetComponent<TextMeshProUGUI>().text = $"Wave {newWaveIndex+1} of 10";
+        waveTextAnim.transform.Find("WaveText").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 10";
         waveTextAnim.SetTrigger("ShowText");
         bottomBarFill.fillAmount = 0;
 
