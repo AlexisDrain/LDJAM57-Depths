@@ -30,7 +30,8 @@ public class EntityHealth : MonoBehaviour
             }
             transform.parent.GetComponent<TriggerSequence>().IncrementSequence();
             onKill.Invoke();
-            Destroy(gameObject);
+            gameObject.SetActive(false); // this will allow it to be revived
+            // Destroy(gameObject);
         } else {
             onDamage.Invoke();
         }

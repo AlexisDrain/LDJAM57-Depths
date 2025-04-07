@@ -19,8 +19,11 @@ public class TriggerSequence : MonoBehaviour
     // Update is called once per frame
     public void IncrementSequence()
     {
-        current_sequence += 1;
 
+        current_sequence += 1;
+        GameManager.totalKills += 1;
+
+        GameManager.text_totalKills.text = $"Kills: {GameManager.totalKills}";
         GameManager.bottomBarFill.fillAmount = (float)current_sequence / (float)sequenceTotal;
 
         if (current_sequence >= sequenceTotal) {
