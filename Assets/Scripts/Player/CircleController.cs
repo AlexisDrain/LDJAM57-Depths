@@ -28,7 +28,6 @@ public class CircleController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 18f));
-
         transform.localPosition = Vector3.ClampMagnitude(transform.localPosition, 7.5f);
 
         // rotation
@@ -54,7 +53,10 @@ public class CircleController : MonoBehaviour
                 }
                 // GameManager.playerTrans.position = transform.position;
                 GameManager.SpawnLoudAudio(clip_dash);
-                playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position).normalized * dashImpulse, ForceMode.Impulse);
+                // not normalized
+                playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position) * dashImpulse, ForceMode.Impulse);
+                // normalized
+                //playerRigidbody.AddForce((transform.position - GameManager.playerTrans.position).normalized * dashImpulse, ForceMode.Impulse);
 
             }
             /* OLD. slowdown mechanics

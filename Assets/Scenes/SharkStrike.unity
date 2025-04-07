@@ -10249,7 +10249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c9d7de4b12b1d4595e518e20be273b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashImpulse: 30
+  dashImpulse: 4
   clip_dash: {fileID: 8300000, guid: 60c1eef3e4c866648977b201216cde86, type: 3}
   slowdownCollider: {fileID: 1379132476}
   myAudioSource: {fileID: 527994111}
