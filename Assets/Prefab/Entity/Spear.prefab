@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3292411133810860925}
   - component: {fileID: 8497752620697868383}
   - component: {fileID: 2151625771368322220}
+  - component: {fileID: 7151890233504762740}
   m_Layer: 9
   m_Name: Spear
   m_TagString: Untagged
@@ -249,5 +250,40 @@ MonoBehaviour:
   shootForce: 50
   maxSpeedFull: 30
   maxSpeedSlowdown: 3
+  rotateTowardsTargetSpeed: 0
   direction: {x: 0, y: 0, z: 0}
   ignoreShooter: {fileID: 0}
+  isSlowDown: 0
+--- !u!114 &7151890233504762740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637652065766230756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2bb3faf16012442be012980f638bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes: your notes
+  timeToWait: 5
+  onTimeEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 637652065766230756}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  waitForSecondsRealtime: 0
+  startOnEnable: 1
+  startOnStart: 1
+  restartTimerOnReset: 1
