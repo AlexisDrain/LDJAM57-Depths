@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -110,6 +111,9 @@ public class GameManager : MonoBehaviour
         GameManager.mainMenu.SetActive(true);
         Time.timeScale = 0f;
     }
+    public static void RestartGameScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void StartGameButton() {
         tutorial1.SetActive(true);
     }
@@ -124,7 +128,7 @@ public class GameManager : MonoBehaviour
             waves[i].SetActive(false);
         }
         currentWave = newWaveIndex;
-        waveTextAnim.transform.Find("WaveText").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 10";
+        waveTextAnim.transform.Find("WaveText").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 21";
         waveTextAnim.SetTrigger("ShowText");
         bottomBarFill.fillAmount = 0;
 

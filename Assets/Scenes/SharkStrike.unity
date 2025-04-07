@@ -9271,7 +9271,7 @@ GameObject:
   - component: {fileID: 222722623}
   - component: {fileID: 222722622}
   m_Layer: 0
-  m_Name: Wave3
+  m_Name: Wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17782,7 +17782,7 @@ GameObject:
   - component: {fileID: 683750299}
   - component: {fileID: 683750298}
   m_Layer: 0
-  m_Name: Wave4
+  m_Name: Wave5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21296,7 +21296,7 @@ GameObject:
   - component: {fileID: 797980787}
   - component: {fileID: 797980786}
   m_Layer: 0
-  m_Name: Wave8
+  m_Name: Wave9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24170,7 +24170,7 @@ GameObject:
   - component: {fileID: 938687046}
   - component: {fileID: 938687045}
   m_Layer: 0
-  m_Name: Wave7
+  m_Name: Wave8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26965,7 +26965,7 @@ GameObject:
   - component: {fileID: 1093250564}
   - component: {fileID: 1093250565}
   m_Layer: 0
-  m_Name: Wave0
+  m_Name: Wave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29463,7 +29463,7 @@ GameObject:
   - component: {fileID: 1167961274}
   - component: {fileID: 1167961273}
   m_Layer: 0
-  m_Name: Wave-Final2
+  m_Name: Wave-21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37786,7 +37786,7 @@ GameObject:
   - component: {fileID: 1353597475}
   - component: {fileID: 1353597474}
   m_Layer: 0
-  m_Name: Wave6
+  m_Name: Wave7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48352,7 +48352,7 @@ GameObject:
   - component: {fileID: 1621443433}
   - component: {fileID: 1621443432}
   m_Layer: 0
-  m_Name: Wave9
+  m_Name: Wave10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48416,7 +48416,7 @@ GameObject:
   - component: {fileID: 1621774579}
   - component: {fileID: 1621774578}
   m_Layer: 0
-  m_Name: Wave2
+  m_Name: Wave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59412,7 +59412,7 @@ GameObject:
   - component: {fileID: 1663283731}
   - component: {fileID: 1663283730}
   m_Layer: 0
-  m_Name: Wave5
+  m_Name: Wave6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60573,7 +60573,7 @@ GameObject:
   - component: {fileID: 1714603068}
   - component: {fileID: 1714603067}
   m_Layer: 5
-  m_Name: StartGame
+  m_Name: RestartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60678,10 +60678,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 968417913}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1939292359}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGameScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -60689,30 +60689,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1714603065}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1062405411}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1714603070
 MonoBehaviour:
@@ -61445,7 +61421,7 @@ GameObject:
   - component: {fileID: 1778061718}
   - component: {fileID: 1778061717}
   m_Layer: 0
-  m_Name: Wave1
+  m_Name: Wave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67066,7 +67042,7 @@ GameObject:
   - component: {fileID: 2037079192}
   - component: {fileID: 2037079191}
   m_Layer: 0
-  m_Name: Wave-Final1
+  m_Name: Wave-20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
