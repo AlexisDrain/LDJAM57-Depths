@@ -32,7 +32,10 @@ public class TriggerSequence : MonoBehaviour
         GameManager.totalKills += 1;
 
         GameManager.text_totalKills.text = $"Kills: {GameManager.totalKills}";
-        GameManager.bottomBarFill.fillAmount = (float)current_sequence / (float)sequenceTotal;
+        float ratio = (float)current_sequence / (float)sequenceTotal;
+        GameManager.bottomBarFill.GetComponent<BottomBarFill>().target = ratio;
+        // no lerp
+        //GameManager.bottomBarFill.fillAmount = (float)current_sequence / (float)sequenceTotal;
 
         if (current_sequence >= sequenceTotal) {
             sequenceEvent.Invoke();
