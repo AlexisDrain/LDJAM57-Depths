@@ -32,7 +32,6 @@ public class BulletStats : MonoBehaviour
     public void FixedUpdate() {
         myRigidbody.AddForce(direction * shootForce, ForceMode.Force); // direction is set by other entities. Like EntityShooter;
         if (trailParticles) {
-            print(trailParticles.isPlaying);
             if (transform.position.y > GameManager.waterHeight && trailParticles.isPaused == false) {
                 trailParticles.Pause();
             } else if(transform.position.y < GameManager.waterHeight && trailParticles.isPaused == true) {

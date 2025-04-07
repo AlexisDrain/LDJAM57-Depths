@@ -28,14 +28,16 @@ public class CircleController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 18f));
-        if(transform.localPosition.magnitude > 10f) {
-            if (Cursor.visible == false) {
-                Cursor.visible = true;
+        if(GameManager.gameIsPaused == false) {
+            if(transform.localPosition.magnitude > 10f) {
+                if (Cursor.visible == false) {
+                    Cursor.visible = true;
+                }
             }
-        }
-        if (transform.localPosition.magnitude < 10f) {
-            if (Cursor.visible == true) {
-                Cursor.visible = false;
+            if (transform.localPosition.magnitude < 10f) {
+                if (Cursor.visible == true) {
+                    Cursor.visible = false;
+                }
             }
         }
         transform.localPosition = Vector3.ClampMagnitude(transform.localPosition, 7.5f);

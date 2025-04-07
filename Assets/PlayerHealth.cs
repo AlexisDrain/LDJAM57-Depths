@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
         _invunrable = false;
     }
     public void HealPlayer(int newHeal) {
-        currentHealth += currentHealth;
+        currentHealth += newHeal;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         GameManager.heartsCounter.SetCurrentHealth(currentHealth);
     }

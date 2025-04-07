@@ -131,7 +131,16 @@ public class GameManager : MonoBehaviour
             waves[i].SetActive(false);
         }
         currentWave = newWaveIndex;
-        waveTextAnim.transform.Find("WaveText").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 21";
+
+        if (newWaveIndex == 21) {
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            gameIsPaused = true;
+            endingEvent.Invoke();
+            return;
+        }
+
+        waveTextAnim.transform.Find("WaveText_Text").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 21";
         waveTextAnim.SetTrigger("ShowText");
         bottomBarFill.fillAmount = 0;
 
@@ -145,11 +154,7 @@ public class GameManager : MonoBehaviour
             tutorial2.SetActive(true);
             upgrade1Event.Invoke();
         }
-        else if (newWaveIndex == 21) {
-            Time.timeScale = 0f;
-            endingEvent.Invoke();
-            return;
-        } else {
+        else {
             tutorial1.SetActive(false);
             tutorial2.SetActive(false);
         }

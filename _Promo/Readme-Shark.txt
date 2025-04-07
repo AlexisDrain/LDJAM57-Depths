@@ -2,17 +2,17 @@
 Unleash your inner shark in this hectic, adrenaline-charged game!
 
 [Long Description]
-Unleash your inner shark in this hectic, adrenaline-charged game!
+Unleash your inner shark in this hectic, adrenaline-charged game!  
 
-Made in 3 days for Ludum Dare 57 Jam. Theme: Depths
+Made in 3 days for Ludum Dare 57 Jam. Theme: Depths  
 
 Ludum Dare 57 Jam Page: 
 https://ldjam.com/events/ludum-dare/57/shark-mayhem  
 
-Controls:
-Move - WASD or arrow keys
-Dash - Left mouse click
-Pause - Escape or P
+Controls:  
+Move - WASD or arrow keys  
+Dash - Left mouse click  
+Pause - Escape or P  
 
 
 -----------------
