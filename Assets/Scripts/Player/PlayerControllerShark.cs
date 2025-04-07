@@ -32,10 +32,11 @@ public class PlayerControllerShark : MonoBehaviour {
         // player Dead body
         if(GameManager.playerIsAlive == false) {
             if (_aboveWater == false) {
-                myRigidbody.AddForce(Vector3.up * gravityForce, ForceMode.Force);
+                myRigidbody.AddForce(Vector3.up * 1f, ForceMode.Force);
             }
             if (transform.position.y > waterHeight) {
                 _aboveWater = true;
+                myRigidbody.position = new Vector3(transform.position.x, waterHeight, transform.position.z);
                 myRigidbody.linearVelocity = new Vector3(myRigidbody.linearVelocity.x * drag,
                                                      myRigidbody.linearVelocity.y * drag,
                                                      myRigidbody.linearVelocity.z);

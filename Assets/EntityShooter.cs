@@ -19,9 +19,13 @@ public class EntityShooter : MonoBehaviour
     private float currentReloadDelay = 1f;
     public AudioClip powerUpSFX;
     public AudioClip shootSFX;
+    public Collider overrideCollider;
     void Start()
     {
         currentReloadDelay = defaultReloadDelay;
+        if(overrideCollider == null) {
+            overrideCollider = GetComponent<Collider>();
+        }
     }
 
     // Update is called once per frame
@@ -82,7 +86,7 @@ public class EntityShooter : MonoBehaviour
         if (missile.GetComponent<BulletStats>().ignoreShooter) {
             Physics.IgnoreCollision(missile.GetComponent<Collider>(), missile.GetComponent<BulletStats>().ignoreShooter, false);
         }
-        missile.GetComponent<BulletStats>().ignoreShooter = GetComponent<Collider>();
+        missile.GetComponent<BulletStats>().ignoreShooter = overrideCollider;
         Physics.IgnoreCollision(missile.GetComponent<Collider>(), missile.GetComponent<BulletStats>().ignoreShooter, true);
     }
 
@@ -100,7 +104,7 @@ public class EntityShooter : MonoBehaviour
         if (spear.GetComponent<BulletStats>().ignoreShooter) {
             Physics.IgnoreCollision(spear.GetComponent<Collider>(), spear.GetComponent<BulletStats>().ignoreShooter, false);
         }
-        spear.GetComponent<BulletStats>().ignoreShooter = GetComponent<Collider>();
+        spear.GetComponent<BulletStats>().ignoreShooter = overrideCollider;
         Physics.IgnoreCollision(spear.GetComponent<Collider>(), spear.GetComponent<BulletStats>().ignoreShooter, true);
     }
 }

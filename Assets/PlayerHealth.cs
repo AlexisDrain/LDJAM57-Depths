@@ -37,8 +37,8 @@ public class PlayerHealth : MonoBehaviour
         if(newDamage < 0) {
             newDamage = -newDamage;
         }
-        if (_invunrable) {
-            print("can't be damaged");
+        if (_invunrable || currentHealth <= 0) {
+            print("player can't be damaged");
             return;
         }
         currentHealth -= newDamage;

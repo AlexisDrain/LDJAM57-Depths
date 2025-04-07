@@ -1,14 +1,34 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EntityHealth : MonoBehaviour
 {
-    public int health = 1;
+    public Renderer flickerGraphics;
+    public int defaultHealth = 1;
+    private int currentHealth = 1;
     public UnityEvent onDamage;
     public UnityEvent onKill;
-    void Start()
-    {
-        
+    void OnEnable() {
+        if (flickerGraphics) {
+            flickerGraphics.enabled = true;
+        }
+        currentHealth = defaultHealth;
+    }
+    private IEnumerator InvunrablePattern() {
+        // _invunrable = true;
+        flickerGraphics.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        flickerGraphics.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        flickerGraphics.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        flickerGraphics.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        flickerGraphics.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        flickerGraphics.enabled = true;
+        // _invunrable = false;
     }
 
     // Update is called once per frame
@@ -18,9 +38,9 @@ public class EntityHealth : MonoBehaviour
             newDamage = -newDamage;
         }
 
-        health -= newDamage;
+        currentHealth -= newDamage;
 
-        if (health <= 0) {
+        if (currentHealth <= 0) {
             if(transform.position.y > 29) {
                 GameManager.particles_BloodAboveWater.transform.position = transform.position;
                 GameManager.particles_BloodAboveWater.Play();
@@ -33,6 +53,9 @@ public class EntityHealth : MonoBehaviour
             gameObject.SetActive(false); // this will allow it to be revived
             // Destroy(gameObject);
         } else {
+            if (flickerGraphics) {
+                StartCoroutine("InvunrablePattern");
+            }
             onDamage.Invoke();
         }
     }
