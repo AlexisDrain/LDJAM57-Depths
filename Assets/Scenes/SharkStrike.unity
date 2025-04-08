@@ -908,7 +908,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 528de4ac5924d784f8a5854642c682ea, type: 2}
+  - {fileID: 2100000, guid: 6d576364f46a97448b5c1e27d743408b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16487,7 +16487,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashImpulse: 4
+  circle3DRenderer: {fileID: 20494175}
+  circle3DActive: {fileID: 2100000, guid: 6d576364f46a97448b5c1e27d743408b, type: 2}
+  circle3DNotActive: {fileID: 2100000, guid: 62cd2608dfa3de14281789f8fb6f3a03, type: 2}
   clip_dash: {fileID: 8300000, guid: 60c1eef3e4c866648977b201216cde86, type: 3}
+  clip_cantdash: {fileID: 8300000, guid: 32f320a7e02863440abb84553d527b41, type: 3}
   slowdownCollider: {fileID: 1379132476}
   myAudioSource: {fileID: 527994111}
   clip_dashHold: {fileID: 8300000, guid: 6784ce5dda2d25446a923ccd616a7bd8, type: 3}

@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class CircleController : MonoBehaviour
 {
     public float dashImpulse = 10f;
 
+    public MeshRenderer circle3DRenderer;
+    public Material circle3DActive;
+    public Material circle3DNotActive;
     public AudioClip clip_dash;
+    public AudioClip clip_cantdash;
     private Rigidbody playerRigidbody;
     private SpriteRenderer SpriteRenderer;
     public GameObject slowdownCollider;
@@ -49,9 +54,18 @@ public class CircleController : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
         if(GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater) {
+            circle3DRenderer.material = circle3DNotActive;
             SpriteRenderer.color = cannotDashColor;
         } else {
+            circle3DRenderer.material = circle3DActive;
             SpriteRenderer.color = regularDashColor;
+        }
+
+        if (GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == true
+            && GameManager.gameIsPaused == false
+            && GameManager.playerIsAlive == true
+            && Input.GetButtonDown("Dash")) {
+            GameManager.SpawnLoudAudio(clip_cantdash);
         }
 
         if (GameManager.playerTrans.GetComponent<PlayerControllerShark>()._aboveWater == false
