@@ -142,9 +142,13 @@ public class GameManager : MonoBehaviour
 
         if(GameManager.playerTrans.GetComponent<PlayerHealth>().currentHealth == 5) {
             waveTextAnim.GetComponent<RectTransform>().sizeDelta = new Vector2(waveTextAnim.GetComponent<RectTransform>().sizeDelta.x, 90f);
+            waveTextAnim.transform.Find("Heart1").GetComponent<Image>().enabled = false;
+            waveTextAnim.transform.Find("Heart2").GetComponent<Image>().enabled = false;
             waveTextAnim.transform.Find("WaveText_Text").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex+1}</color> of 21";
         } else {
             waveTextAnim.GetComponent<RectTransform>().sizeDelta = new Vector2(waveTextAnim.GetComponent<RectTransform>().sizeDelta.x, 130f);
+            waveTextAnim.transform.Find("Heart1").GetComponent<Image>().enabled = true;
+            waveTextAnim.transform.Find("Heart2").GetComponent<Image>().enabled = true;
             waveTextAnim.transform.Find("WaveText_Text").GetComponent<TextMeshProUGUI>().text = $"Wave <color=#0086FF>{newWaveIndex + 1}</color> of 21\nHealth Restored";
         }
         GameManager.playerTrans.GetComponent<PlayerHealth>().HealPlayer(5);

@@ -3553,7 +3553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flickerGraphics: {fileID: 6769405016029458836}
-  defaultHealth: 2
+  defaultHealth: 1
   onDamage:
     m_PersistentCalls:
       m_Calls: []

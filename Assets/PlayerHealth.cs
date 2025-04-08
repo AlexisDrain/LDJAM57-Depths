@@ -29,6 +29,10 @@ public class PlayerHealth : MonoBehaviour
         playerSprite.enabled = false;
         yield return new WaitForSeconds(0.1f);
         playerSprite.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.enabled = true;
         _invunrable = false;
     }
     public void HealPlayer(int newHeal) {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7497243153193969487}
   - component: {fileID: 6422492746555055245}
-  - component: {fileID: 5030961838319547078}
+  - component: {fileID: 5935654281261000342}
   - component: {fileID: 3983894365235620817}
   - component: {fileID: 3292411133810860925}
   - component: {fileID: 2151625771368322220}
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0292dd84a7eac468d4ce82b5913b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5030961838319547078
+--- !u!114 &5935654281261000342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,12 +63,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 637652065766230756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e5ec3b59b35894bab6520ac1e62088, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cad7bb02c16fc049963ee0755af4b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  damageValue: 1
 --- !u!114 &3983894365235620817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53872cff81004043b61bbc082133fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootForce: 1
+  maxSpeedFull: 1
+  maxSpeedSlowdown: 1
+  rotateTowardsTargetSpeed: 0
+  trailParticles: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
   ignoreShooter: {fileID: 0}
+  isSlowDown: 0
 --- !u!135 &1117278615932154454
 SphereCollider:
   m_ObjectHideFlags: 0

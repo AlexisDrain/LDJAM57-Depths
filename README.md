@@ -11,6 +11,9 @@ Made in 3 days for Ludum Dare 57 Jam. Theme: Depths
 Ludum Dare 57 Jam Page: 
 https://ldjam.com/events/ludum-dare/57/shark-mayhem  
 
+Full credits + Source code  
+https://github.com/AlexisDrain/LDJAM57-Depths    
+
 Controls:  
 Move - WASD or arrow keys  
 Dash - Left mouse click  
