@@ -1,10 +1,11 @@
-# LDJAM57-Depths
+# LDJAM57-Depths - Wave 21
 
 Play on Newgrounds: https://www.newgrounds.com/portal/view/project/6589301  
-Or play on Itch.io: https://alexclay.itch.io/shark-mayhem  
+Or play on Itch.io: https://alexclay.itch.io/wave-21  
 
 [Long Description]  
 Unleash your inner shark in this hectic, adrenaline-charged game!  
+Can you survive all 21 waves?  
 
 Made in 3 days for Ludum Dare 57 Jam. Theme: Depths  
 
